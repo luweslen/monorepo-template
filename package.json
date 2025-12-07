@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "Monorepo template using pnpm workspaces, NestJS and VueJS",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server:dev": "pnpm --filter server dev",
+    "server:build": "pnpm --filter server build",
+    "server:start": "pnpm --filter server start"
   },
   "keywords": [
     "monorepo",
@@ -15,5 +17,10 @@
     "name": "Luciano Weslen",
     "url": "https://github.com/luweslen"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.15.0",
+    "pnpm": ">=9.15.2"
+  },
+  "packageManager": "pnpm@9.15.2+sha1.0ffb02f94047016ec7e088030337455b4c94bb34"
 }

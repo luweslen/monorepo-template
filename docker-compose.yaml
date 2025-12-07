@@ -1,0 +1,20 @@
+volumes:
+  server-node-modules:
+
+
+services:
+  server:
+    build:
+      context: .
+      dockerfile: ./server/Dockerfile
+      target: base
+    container_name: server
+    ports:
+      - '3001:3001'
+    volumes:
+      - ./server:/app/server
+      - server-node-modules:/app/server/node_modules
+    env_file:
+      - ./server/.env
+    working_dir: /app/server
+    command: pnpm run start:dev
