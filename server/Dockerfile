@@ -1,7 +1,7 @@
 FROM public.ecr.aws/docker/library/node:22-alpine AS base
 
 # Enable corepack and prepare pnpm
-RUN corepack enable && corepack prepare pnpm@10.24.0 --activate
+RUN corepack enable && corepack prepare pnpm@10.25.0 --activate
 
 WORKDIR /app
 
