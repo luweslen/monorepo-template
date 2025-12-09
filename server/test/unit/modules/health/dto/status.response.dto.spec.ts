@@ -3,7 +3,7 @@ import { plainToInstance } from 'class-transformer';
 import { HealthStatusResponseDto } from '../../../../../src/modules/health/dto/status.response.dto';
 import { describe, it, expect } from 'vitest';
 import { validateProperty } from 'test/utils/mock.util';
-import { makeHealthStatus } from 'test/factory/health.factory';
+import { makeHealthStatus } from 'test/utils/factories/health.factory';
 
 describe('Modules :: Health :: DTO :: HealthStatusResponseDto', () => {
   const validateAttr = validateProperty(

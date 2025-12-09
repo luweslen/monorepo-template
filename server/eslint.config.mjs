@@ -7,6 +7,9 @@ import unusedImports from 'eslint-plugin-unused-imports';
 import stylistic from '@stylistic/eslint-plugin';
 
 export default tseslint.config(
+  {
+    ignores: ['eslint.config.mjs', '*.mjs'],
+  },
   eslint.configs.recommended,
   ...tseslint.configs.recommendedTypeChecked,
   {
@@ -44,6 +47,7 @@ export default tseslint.config(
       '@typescript-eslint/no-unsafe-assignment': 'off',
       '@typescript-eslint/no-unsafe-return': 'off',
       '@typescript-eslint/unbound-method': 'off',
+      '@typescript-eslint/no-unsafe-argument': 'off',
       'unused-imports/no-unused-imports': 'error',
       'check-file/filename-naming-convention': [
       'error',

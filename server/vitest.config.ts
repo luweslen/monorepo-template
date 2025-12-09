@@ -1,4 +1,5 @@
 import { resolve } from 'path';
+import { config } from 'dotenv';
 import swc from 'unplugin-swc';
 import { defineConfig } from 'vitest/config';
 
@@ -7,6 +8,7 @@ export default defineConfig({
     globals: true,
     root: './',
     include: ['test/**/*.spec.ts'],
+    setupFiles: ['./test/setup.ts'],
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html'],
@@ -17,6 +19,9 @@ export default defineConfig({
         '**/*.spec.ts',
         '**/*.config.ts',
       ],
+    },
+    env: {
+      ...config({ path: './.env.test' }).parsed,
     },
   },
   plugins: [
@@ -30,6 +35,7 @@ export default defineConfig({
     alias: {
       // Ensure Vitest correctly resolves TypeScript path aliases
       src: resolve(__dirname, './src'),
+      test: resolve(__dirname, './test'),
     },
   },
 });
