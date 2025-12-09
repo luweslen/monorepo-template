@@ -2,6 +2,7 @@
   "name": "monorepo-template",
   "version": "0.0.1",
   "description": "Monorepo template using pnpm workspaces, NestJS and VueJS",
+  "type": "module",
   "scripts": {
     "server:dev": "pnpm --filter server dev",
     "server:build": "pnpm --filter server build",

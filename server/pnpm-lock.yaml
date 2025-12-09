@@ -102,6 +102,9 @@ importers:
       '@types/node':
         specifier: 22.12.0
         version: 22.12.0
+      '@types/rosie':
+        specifier: 0.0.45
+        version: 0.0.45
       '@types/supertest':
         specifier: 6.0.2
         version: 6.0.2
@@ -1281,6 +1284,9 @@ packages:
 
   '@types/range-parser@1.2.7':
     resolution: {integrity: sha512-hKormJbkJqzQGhziax5PItDUTMAM9uE2XXQmM37dyd4hVM+5aVl7oVxMVUiVQn2oCQFN/LKCZdvSM0pFRqbSmQ==}
+
+  '@types/rosie@0.0.45':
+    resolution: {integrity: sha512-t3ZEJ4xIE5CaJnsWcU+nY8R7rhvIEfX2xHNpvK6mA+CwUyvYJJ7SdU+pIodqTv0w4I0cBCWuJ4wzmwZOsjZdOg==}
 
   '@types/send@1.2.1':
     resolution: {integrity: sha512-arsCikDvlU99zl1g69TcAB3mzZPpxgw0UQnaHeC1Nwb015xp8bknZv5rIfri9xTOcMuaVgvabfIRA7PSZVuZIQ==}
@@ -4667,6 +4673,8 @@ snapshots:
   '@types/qs@6.14.0': {}
 
   '@types/range-parser@1.2.7': {}
+
+  '@types/rosie@0.0.45': {}
 
   '@types/send@1.2.1':
     dependencies:

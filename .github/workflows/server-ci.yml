@@ -1,0 +1,64 @@
+name: Server CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'server/**'
+      - 'pnpm-lock.yaml'
+      - '.github/workflows/server-ci.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'server/**'
+      - 'pnpm-lock.yaml'
+      - '.github/workflows/server-ci.yml'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create .env file
+        run: cp server/.env.test server/.env
+
+      - name: Install dependencies
+        run: docker compose run server pnpm install
+
+      - name: Run linter with Docker Compose
+        run: docker compose run server pnpm run lint
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create .env file
+        run: cp server/.env.test server/.env
+
+      - name: Install dependencies
+        run: docker compose run server pnpm install
+
+      - name: Build project with Docker Compose
+        run: docker compose run server pnpm run build
+
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create .env file
+        run: cp server/.env.test server/.env
+
+      - name: Install dependencies
+        run: docker compose run server pnpm install
+
+      - name: Run tests with Docker Compose
+        run: docker compose run server pnpm run test:ci
