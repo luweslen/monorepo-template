@@ -1,6 +1,8 @@
 # Monorepo Template
 
-A modern monorepo template using pnpm workspaces, NestJS, and Docker.
+A modern monorepo template using pnpm workspaces, Vue 3, NestJS, and Docker.
+
+![Status Page Screenshot](.github/assets/screenshot-status.png)
 
 ## Prerequisites
 
@@ -20,49 +22,118 @@ pnpm install
 docker compose run server pnpm install
 ```
 
-### Running the Server
+### Running the Applications
 
 ```bash
-# Run server with Docker Compose
+# Run both client and server with Docker Compose
+docker compose up
+
+# Or run individually
+docker compose up client
 docker compose up server
 ```
 
 ### Available Scripts
 
+#### Client
+
+```bash
+# Development
+pnpm client:dev
+
+# Production build
+pnpm client:build
+pnpm client:preview
+
+# Testing
+pnpm client:test:unit          # Run unit tests
+pnpm client:test:e2e           # Run E2E tests
+pnpm client:test:e2e:ui        # Run E2E tests with UI
+pnpm client:test:e2e:headed    # Run E2E tests in headed mode
+pnpm client:test:e2e:debug     # Run E2E tests in debug mode
+
+# Type checking
+pnpm client:type-check
+
+# Linting
+pnpm client:lint
+```
+
 #### Server
 
 ```bash
 # Development
-pnpm run start:dev
+pnpm server:dev
 
 # Production build
-pnpm run build
-pnpm run start:prod
+pnpm server:build
+pnpm server:start:prod
 
 # Testing
-pnpm run test          # Run all tests
-pnpm run test:unit     # Run unit tests
-pnpm run test:e2e      # Run E2E tests
-pnpm run test:cov      # Run tests with coverage
-pnpm run test:ui       # Run tests with UI
+pnpm server:test           # Run all tests
+pnpm server:test:unit      # Run unit tests
+pnpm server:test:e2e       # Run E2E tests
+pnpm server:test:cov       # Run tests with coverage
+pnpm server:test:ui        # Run tests with UI
 
 # Linting
-pnpm run lint
+pnpm server:lint
 ```
 
 ## Project Structure
 
 ```
 .
+├── client/           # Vue 3 frontend application
+│   ├── src/
+│   │   ├── api/           # API client
+│   │   ├── components/    # Vue components
+│   │   ├── i18n/          # Internationalization (en-US, pt-BR, es-ES)
+│   │   ├── layouts/       # Layout components
+│   │   ├── pages/         # Page components
+│   │   ├── router/        # Vue Router configuration
+│   │   └── utils/         # Utility functions
+│   └── test/
+│       ├── e2e/           # Playwright E2E tests
+│       └── unit/          # Vitest unit tests
 ├── server/           # NestJS backend application
+│   ├── src/
+│   │   └── modules/       # API modules
+│   └── test/
+│       ├── e2e/           # E2E tests
+│       └── unit/          # Unit tests
 ├── pnpm-workspace.yaml
 ├── pnpm-lock.yaml
 └── docker-compose.yaml
 ```
 
-## API Documentation
+## Features
 
-When the server is running, you can access:
+### Client (Vue 3)
+- ⚡️ Vue 3 with TypeScript
+- 🎨 Tailwind CSS v4 for styling
+- 🌐 i18n support (English, Portuguese, Spanish)
+- 🎭 Playwright for E2E testing
+- ⚡ Vitest for unit testing
+- 🎯 Vue Router for routing
+- 🌗 Dark mode support
+- 📱 Responsive design
+- 🧩 shadcn-vue components
+
+### Server (NestJS)
+- 🚀 NestJS framework
+- 📝 Swagger API documentation
+- 🧪 Jest for testing
+- 🐳 Docker ready
+
+## Access URLs
+
+### Client Application
+
+- Development: http://localhost:5173
+- Production preview: http://localhost:4173
+
+### API Documentation
 
 - Swagger UI: http://localhost:3000/swagger
 - Scalar API Docs: http://localhost:3000/docs
