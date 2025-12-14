@@ -1,5 +1,6 @@
 packages:
   - server
+  - client
 
 ignoredBuiltDependencies:
   - '@nestjs/core'
@@ -8,3 +9,4 @@ ignoredBuiltDependencies:
   - '@suites/doubles.vitest'
   - '@swc/core'
   - esbuild
+  - vue-demi

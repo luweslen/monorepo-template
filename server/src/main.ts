@@ -18,6 +18,11 @@ async function bootstrap() {
 
   const config = await app.resolve(ConfigService);
 
+  // Enable CORS
+  app.enableCors({
+    origin: ['http://0.0.0.0:5173', 'http://localhost:5173'],
+  });
+
   // Set up logger
   const logger = app.get(Logger);
 

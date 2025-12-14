@@ -1,0 +1,11 @@
+{
+  "title": "Estado de la API",
+  "subtitle": "Monitoreo en tiempo real",
+  "infos": {
+    "description": "Información principal de la API",
+    "title": "Estado General",
+    "version": "Versión",
+    "responseTime": "Tiempo de Respuesta",
+    "lastCheck": "Última Verificación"
+  }
+}

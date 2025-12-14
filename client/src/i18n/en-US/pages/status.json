@@ -1,0 +1,11 @@
+{
+  "title": "API Status",
+  "subtitle": "Real-time monitoring",
+  "infos": {
+    "description": "Main API Information",
+    "title": "General Status",
+    "version": "Version",
+    "responseTime": "Response Time",
+    "lastCheck": "Last Check"
+  }
+}

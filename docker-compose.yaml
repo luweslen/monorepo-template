@@ -1,5 +1,6 @@
 volumes:
   server-node-modules:
+  client-node-modules:
 
 
 services:
@@ -18,3 +19,19 @@ services:
       - ./server/.env
     working_dir: /app/server
     command: pnpm run start:dev
+
+  client:
+    build:
+      context: .
+      dockerfile: ./client/Dockerfile
+      target: development
+    container_name: client
+    ports:
+      - '5173:5173'
+    volumes:
+      - ./client:/app/client
+      - client-node-modules:/app/client/node_modules
+    working_dir: /app/client
+    command: sh -c "pnpm install && pnpm run dev"
+    depends_on:
+      - server

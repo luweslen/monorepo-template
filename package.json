@@ -7,7 +7,15 @@
     "server:dev": "pnpm --filter server dev",
     "server:build": "pnpm --filter server build",
     "server:start": "pnpm --filter server start",
-    "server:test:ci": "pnpm --filter server test:ci"
+    "server:test:unit": "pnpm --filter server test:unit",
+    "server:test:e2e": "pnpm --filter server test:e2e",
+    "server:test:ci": "pnpm --filter server test:ci",
+    "client:dev": "pnpm --filter client dev",
+    "client:build": "pnpm --filter client build",
+    "client:preview": "pnpm --filter client preview",
+    "client:test:unit": "pnpm --filter client test:unit",
+    "client:test:e2e": "pnpm --filter client test:e2e",
+    "lint": "pnpm --filter \"./...\" lint"
   },
   "keywords": [
     "monorepo",
