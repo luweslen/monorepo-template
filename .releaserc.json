@@ -13,6 +13,12 @@
       }
     ],
     [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "pnpm version ${nextRelease.version} --workspace-concurrency=1 --no-git-tag-version --filter client --filter server"
+      }
+    ],
+    [
       "@semantic-release/git",
       {
         "assets": [
