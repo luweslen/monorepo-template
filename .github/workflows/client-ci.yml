@@ -1,0 +1,68 @@
+name: Client CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'client/**'
+      - 'pnpm-lock.yaml'
+      - '.github/workflows/client-ci.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'client/**'
+      - 'pnpm-lock.yaml'
+      - '.github/workflows/client-ci.yml'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: docker compose run client pnpm install
+
+      - name: Run linter with Docker Compose
+        run: docker compose run client pnpm run lint
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: docker compose run client pnpm install
+
+      - name: Build project with Docker Compose
+        run: docker compose run client pnpm run build
+
+  test-unit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: docker compose run client pnpm install
+
+      - name: Run unit tests with Docker Compose
+        run: docker compose run client pnpm run test:unit
+
+  test-e2e:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: docker compose run client pnpm install
+
+      - name: Run E2E tests with Docker Compose
+        run: docker compose run client pnpm run test:e2e

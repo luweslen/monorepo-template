@@ -2,7 +2,7 @@ import { i18nModulesMock } from '../../support/mocks/i18n-modules.mock';
 import { describe, expect, it } from 'vitest';
 import { I18nUtils } from '@/utils/i18n.util';
 
-describe('I18nUtils', () => {
+describe('Unit :: Utils :: I18nUtils', () => {
   describe('mapModulesToStructuredObject', () => {
     it('Should map modules into a structured object for i18n usage', () => {
       const result = I18nUtils.mapModulesToStructuredObject(i18nModulesMock);

@@ -1,11 +1,14 @@
-FROM public.ecr.aws/docker/library/node:22-alpine AS base
+FROM public.ecr.aws/docker/library/node:22-slim AS base
 
 # Enable corepack and prepare pnpm
 RUN corepack enable && corepack prepare pnpm@9.15.2 --activate
 
 WORKDIR /app
 
-RUN apk update && apk add --no-cache bash
+# Install dependencies for Playwright
+RUN apt-get update && apt-get install -y \
+  bash \
+  && rm -rf /var/lib/apt/lists/*
 
 FROM base AS development
 
@@ -24,6 +27,9 @@ RUN pnpm install --frozen-lockfile --prefer-offline
 COPY client ./client
 
 WORKDIR /app/client
+
+# Install Playwright browsers and system dependencies
+RUN pnpm exec playwright install --with-deps chromium
 
 # Expose Vite dev server port
 EXPOSE 5173

@@ -7,7 +7,7 @@ import { differenceWith } from 'lodash';
 import ptBR from '@/i18n/pt-BR';
 import enUS from '@/i18n/en-US';
 
-describe('i18n', () => {
+describe('Unit :: i18n', () => {
   beforeEach(() => {
     setActivePinia(createPinia());
   });
