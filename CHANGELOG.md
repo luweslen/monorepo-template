@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/luweslen/monorepo-template/compare/v1.0.0...v1.0.1) (2025-12-15)
+
+
+### Bug Fixes
+
+* **docker-compose:** env file require false ([6777aa4](https://github.com/luweslen/monorepo-template/commit/6777aa4fa9526dc45617e87817ca35f7897dbe0c))
+
 # 1.0.0 (2025-12-15)
 
 

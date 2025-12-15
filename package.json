@@ -1,6 +1,6 @@
 {
   "name": "monorepo-template",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Monorepo template using pnpm workspaces, NestJS and VueJS",
   "type": "module",
   "scripts": {
