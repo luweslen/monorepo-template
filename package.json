@@ -15,7 +15,8 @@
     "client:preview": "pnpm --filter client preview",
     "client:test:unit": "pnpm --filter client test:unit",
     "client:test:e2e": "pnpm --filter client test:e2e",
-    "lint": "pnpm --filter \"./...\" lint"
+    "lint": "pnpm --filter \"./...\" lint",
+    "semantic-release": "semantic-release"
   },
   "keywords": [
     "monorepo",
@@ -23,6 +24,10 @@
     "nestjs",
     "vuejs"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luweslen/monorepo-template.git"
+  },
   "author": {
     "name": "Luciano Weslen",
     "url": "https://github.com/luweslen"
@@ -32,5 +37,11 @@
     "node": ">=22.15.0",
     "pnpm": ">=10.25.0"
   },
-  "packageManager": "pnpm@10.25.0"
+  "packageManager": "pnpm@10.25.0",
+  "devDependencies": {
+    "@semantic-release/changelog": "6.0.3",
+    "@semantic-release/git": "10.0.1",
+    "@semantic-release/github": "12.0.2",
+    "semantic-release": "25.0.2"
+  }
 }
