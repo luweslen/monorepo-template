@@ -16,7 +16,8 @@ services:
       - ./server:/app/server
       - server-node-modules:/app/server/node_modules
     env_file:
-      - ./server/.env
+      - path: ./server/.env
+        required: false
     working_dir: /app/server
     command: pnpm run start:dev
 
