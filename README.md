@@ -127,34 +127,8 @@ pnpm server:lint
 - 🐳 Docker ready
 
 ### DevOps
-- 📦 Automated versioning with semantic-release
-- 📝 Automatic CHANGELOG generation
 - 🔄 GitHub Actions CI/CD
-- 🏷️ Git tag management
 - 📋 Conventional Commits
-
-## Versioning
-
-This project uses [semantic-release](https://github.com/semantic-release/semantic-release) for automated versioning and changelog generation.
-
-### Commit Convention
-
-Follow [Conventional Commits](https://www.conventionalcommits.org/) specification:
-
-- `feat:` - New feature (minor version bump)
-- `fix:` - Bug fix (patch version bump)
-- `feat!:` or `BREAKING CHANGE:` - Breaking change (major version bump)
-
-See [COMMITS.md](./COMMITS.md) for detailed commit guidelines.
-
-### Release Process
-
-Releases are automatically created when commits are pushed to the `main` branch. The GitHub Actions workflow will:
-1. Analyze commits since the last release
-2. Determine the next version number
-3. Generate/update CHANGELOG.md
-4. Create a Git tag
-5. Publish a GitHub release
 
 ## Access URLs
 
