@@ -15,8 +15,7 @@
     "client:preview": "pnpm --filter client preview",
     "client:test:unit": "pnpm --filter client test:unit",
     "client:test:e2e": "pnpm --filter client test:e2e",
-    "lint": "pnpm --filter \"./...\" lint",
-    "semantic-release": "semantic-release"
+    "lint": "pnpm --filter \"./...\" lint"
   },
   "keywords": [
     "monorepo",
@@ -37,12 +36,5 @@
     "node": ">=22.15.0",
     "pnpm": ">=10.25.0"
   },
-  "packageManager": "pnpm@10.25.0",
-  "devDependencies": {
-    "@semantic-release/changelog": "6.0.3",
-    "@semantic-release/exec": "6.0.3",
-    "@semantic-release/git": "10.0.1",
-    "@semantic-release/github": "12.0.2",
-    "semantic-release": "25.0.2"
-  }
+  "packageManager": "pnpm@10.25.0"
 }
